@@ -1,66 +1,160 @@
 # 🤖 QA AI Agent – Intelligent Test Assistant
 
-An AI-powered Quality Engineering assistant that helps QA professionals analyse requirements, generate test cases, identify testing risks and analyse defects.
+An AI-powered Quality Engineering assistant designed to help QA professionals analyse software requirements, identify potential gaps and risks, and generate structured test scenarios and test cases.
 
-**Project Status:** 🚧 In Development
+**Project Status:** 🚧 Working Prototype | Actively Evolving
 
-## 🎯 Project Objective
+## 🎯 Project Overview
 
-The goal of this project is to demonstrate how Generative AI and agent-based workflows can improve software testing efficiency, test coverage and quality decision-making.
+The QA AI Agent explores how Generative AI can support requirement analysis and test design across software development projects.
 
-This project is designed around practical QA scenarios, especially in e-commerce and omnichannel applications.
+Designed with a Senior QA Lead mindset, the application focuses on improving requirement understanding, identifying potential testing risks, and strengthening QA coverage — particularly for retail, e-commerce and omnichannel applications.
 
-## ✨ Planned Features
+## ✨ Current Capabilities
 
-- **AI Test Case Generator:** Generate positive, negative, boundary and edge-case scenarios from user stories and acceptance criteria.
-- **Risk Analyzer:** Identify functional, integration and business risks in requirements.
-- **Defect Analyzer:** Analyse defect descriptions and suggest potential root causes and additional test coverage.
-- **API Test Assistant:** Generate API testing scenarios for positive and negative validations.
-- **Requirement Gap Analysis:** Identify missing, unclear or ambiguous acceptance criteria.
+### 1. AI-Powered Requirement Analysis
+- Analyse user stories and business requirements.
+- Identify potential requirement gaps, ambiguities and conflicts.
+- Highlight external system dependencies.
+- Assess potential business and QA risks.
+- Identify assumptions and requirement readiness.
+
+### 2. Intelligent QA Scenario Generation
+Derive testing scenarios across four coverage categories:
+- Positive scenarios
+- Negative scenarios
+- Boundary scenarios
+- Edge cases
+
+### 3. Consolidated BA / PO Clarification
+- Generate business clarification questions.
+- Present questions together instead of asking them individually.
+- Accept consolidated BA / PO responses.
+- Reassess clarifications and display resolved items and remaining gaps.
+- Maintain clarification-round history during the application session.
+
+### 4. AI Test Case Generation
+Generate structured test cases from user stories, including:
+- Test case ID and category
+- Scenario and preconditions
+- Execution steps
+- Expected results
+- Priority
+- Assumptions and requirement gaps
 
 ## 🛒 Example Use Case
 
-**Scenario:** A customer places an online order using a credit card.
+**Scenario:** A customer wants to place an online order using a credit card or gift card.
 
-The assistant will help identify scenarios such as:
+The assistant can explore testing considerations such as:
+- Successful credit card payment and order creation.
+- Gift card payment and insufficient balance.
+- Split payment scenarios.
+- Payment gateway failures and timeouts.
+- Duplicate payment requests.
+- Payment success with order creation failure.
+- Payment and order status inconsistencies.
 
-- Successful payment and order creation.
-- Declined payment.
-- Duplicate payment submission.
-- Payment gateway timeout.
-- Inventory becoming unavailable during checkout.
-- Order status and payment status mismatch.
+These are AI-generated testing considerations and should be validated against confirmed business rules.
+
+## 🏗️ Application Architecture
+
+QA Engineer  
+↓  
+Streamlit User Interface  
+↓  
+Python QA Logic  
+↓  
+Ollama Local LLM  
+↓  
+Structured Requirement Analysis / QA Scenarios / Test Cases
 
 ## 🧰 Technology Stack
 
 | Technology | Purpose |
 |---|---|
-| Python | Core development |
-| Ollama | Run AI models locally |
-| Open-source LLM | Requirement analysis and test generation |
-| Streamlit | User interface |
-| Pytest | Automated validation |
-| GitHub Actions | CI workflow |
+| Python 3.11 | Core application development |
+| Streamlit | Interactive user interface |
+| Ollama | Local LLM execution |
+| Qwen 2.5 3B | AI-powered requirement analysis and test generation |
+| Requests | Communication with Ollama API |
+| Pandas | Structured data presentation |
+| Git & GitHub | Version control and portfolio |
 
-## 🏗️ High-Level Architecture
+## 🚀 Run Locally
 
-QA Engineer → Streamlit Interface → Python QA Agent → Local AI Model (Ollama) → Structured QA Output
+### Prerequisites
+- Python 3.11
+- Git
+- Ollama installed on your machine
 
-## 🚀 Development Roadmap
+### 1. Clone the repository
 
-- [ ] Set up Python development environment
-- [ ] Integrate a local AI model using Ollama
-- [ ] Build requirement analysis and test case generation
-- [ ] Add risk and defect analysis modules
-- [ ] Create a Streamlit user interface
-- [ ] Add automated tests using Pytest
-- [ ] Configure GitHub Actions
-- [ ] Document sample outputs and project demonstrations
+```bash
+git clone https://github.com/kalpmegha5-dev/qa-ai-agent.git
+cd qa-ai-agent
+```
+
+### 2. Create and activate a virtual environment
+
+```bash
+python -m venv .venv
+```
+
+Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### 4. Download the AI model
+
+```bash
+ollama pull qwen2.5:3b
+```
+
+Ensure Ollama is running locally.
+
+### 5. Launch the application
+
+```bash
+python -m streamlit run app.py
+```
+
+The application will open in your browser.
+
+## 🔒 Privacy Considerations
+
+This prototype uses Ollama to run the configured language model locally.
+
+Requirement content is sent to the local Ollama service rather than a paid cloud AI API. Avoid entering confidential, personally identifiable or production-sensitive information unless your environment is approved for that data.
+
+## ⚠️ Current Limitations
+
+- AI output quality depends on the selected model and the clarity of the input requirements.
+- Local model inference can take time depending on available hardware.
+- Generated findings and test cases require review by a QA professional.
+- The application is a prototype and is not yet validated for production use.
+
+## 🛣️ Future Enhancements
+
+- Improve AI reasoning and requirement traceability.
+- Add downloadable test case reports.
+- Introduce defect analysis and API test generation.
+- Add automated validation and regression coverage.
+- Explore additional AI models and evaluation techniques.
+- Expand support for enterprise and omnichannel testing workflows.
 
 ## 👩‍💻 About This Project
 
-This is a hands-on AI in Quality Engineering project focused on applying AI to real-world software testing challenges.
+This is a hands-on AI in Quality Engineering initiative built to explore practical applications of Generative AI in software testing.
 
-The objective is to explore how QA professionals can use AI to improve test design, coverage analysis and testing productivity.
+The project combines 13+ years of QA domain experience with Python, local LLMs and AI-assisted workflows.
 
 **Built with a Quality Engineering mindset.**
