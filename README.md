@@ -23,6 +23,8 @@ User Story → Requirement Analysis → Clarifications → Test Case Generation 
 
 The application uses a locally hosted LLM for AI-assisted requirement analysis and test case generation.
 
+![QA AI Agent - System Architecture](architecture.png)
+
 ## ⚙️ Technology Stack
 
 | Technology | Purpose |
